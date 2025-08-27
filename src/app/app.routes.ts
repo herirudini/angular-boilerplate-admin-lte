@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { MainLayout } from './shared/layout/main-layout/main-layout';
-import { Login } from './shared/layout/auth-layout/login/login';
-import { Register } from './shared/layout/auth-layout/register/register';
-import { PageNotFound } from './shared/layout/error-layout/page-not-found/page-not-found';
+import { MainLayout } from './layout/main-layout/main-layout';
+import { Login } from './layout/auth-layout/login/login';
+import { Register } from './layout/auth-layout/register/register';
+import { PageNotFound } from './layout/error-layout/page-not-found/page-not-found';
 
 export const routes: Routes = [
   {

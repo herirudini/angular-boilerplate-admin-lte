@@ -37,14 +37,14 @@
               "node_modules/overlayscrollbars/styles/overlayscrollbars.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/admin-lte/css/adminlte.css",
+              "src/assets/admin-lte/css/adminlte.min.css",
               "node_modules/apexcharts/dist/apexcharts.css"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/overlayscrollbars/browser/overlayscrollbars.browser.es6.min.js",
-              "src/assets/admin-lte/js/adminlte.js",
+              "src/assets/admin-lte/js/adminlte.min.js",
               "node_modules/apexcharts/dist/apexcharts.min.js"
             ],
             "server": "src/main.server.ts",
@@ -115,14 +115,14 @@
               "node_modules/overlayscrollbars/styles/overlayscrollbars.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/assets/admin-lte/css/adminlte.css",
+              "src/assets/admin-lte/css/adminlte.min.css",
               "node_modules/apexcharts/dist/apexcharts.css"
             ],
             "scripts": [
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/overlayscrollbars/browser/overlayscrollbars.browser.es6.min.js",
-              "src/assets/admin-lte/js/adminlte.js",
+              "src/assets/admin-lte/js/adminlte.min.js",
               "node_modules/apexcharts/dist/apexcharts.min.js"
             ]
           }

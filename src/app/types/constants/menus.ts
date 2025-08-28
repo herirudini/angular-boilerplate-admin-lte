@@ -53,7 +53,7 @@ export const Menus: { [key: string]: IMenu } = {
         labelKey: 'Tables',
         permissions: ['view', 'create', 'update', 'delete'],
         children: {
-            GENERAL: {
+            SIMPLE: {
                 code: 'tables-simple',
                 url: 'tables-simple',
                 labelKey: 'Simple Tables',

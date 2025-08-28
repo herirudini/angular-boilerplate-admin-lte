@@ -8,7 +8,7 @@ import { Menus } from './types/constants/menus';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: Menus['DASHBOARD'].url,
     pathMatch: 'full'
   },
   {
@@ -16,7 +16,7 @@ export const routes: Routes = [
     component: MainLayout,
     children: [
       {
-        path: 'home',
+        path: Menus['DASHBOARD'].url,
         children: [
           {
             path: '',
@@ -40,6 +40,36 @@ export const routes: Routes = [
           },
         ]
       },
+      {
+        path: Menus['FORMS'].url,
+        children: [
+          {
+            path: '',
+            redirectTo: Menus['FORMS'].children?.['GENERAL'].url,
+            pathMatch: 'full',
+          },
+          {
+            path: Menus['FORMS'].children?.['GENERAL'].url,
+            canActivate: [],
+            loadComponent: () => import('./pages/forms/general-elements/general-elements').then(c => c.GeneralElements)
+          },
+        ]
+      },
+      {
+        path: Menus['TABLES'].url,
+        children: [
+          {
+            path: '',
+            redirectTo: Menus['TABLES'].children?.['SIMPLE'].url,
+            pathMatch: 'full',
+          },
+          {
+            path: Menus['TABLES'].children?.['SIMPLE'].url,
+            canActivate: [],
+            loadComponent: () => import('./pages/tables/tables-simple/tables-simple').then(c => c.TablesSimple)
+          },
+        ]
+      }
     ]
   },
   { path: 'login', component: Login },

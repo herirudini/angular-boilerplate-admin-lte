@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { MLayFooter } from './components/m-lay-footer/m-lay-footer';
-import { MLayMain } from './components/m-lay-main/m-lay-main';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { Previleges } from '../../_previleges';
+import { IMenu } from '../../types/interfaces/menu.interface';
 @Component({
   selector: 'app-main-layout',
-  imports: [MLayFooter, MLayMain, RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './main-layout.html',
   styleUrl: './main-layout.scss'
 })
 export class MainLayout {
-
+  menuItems: IMenu[] = [];
+  constructor(private previleges: Previleges, public router: Router) {
+    this.menuItems = this.previleges.getMenuList();
+  }
 }

@@ -3,6 +3,7 @@ import { MainLayout } from './layout/main-layout/main-layout';
 import { Login } from './layout/auth-layout/login/login';
 import { Register } from './layout/auth-layout/register/register';
 import { PageNotFound } from './layout/error-layout/page-not-found/page-not-found';
+import { Menus } from './types/constants/menus';
 
 export const routes: Routes = [
   {
@@ -15,24 +16,29 @@ export const routes: Routes = [
     component: MainLayout,
     children: [
       {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
-      {
         path: 'home',
-        canActivate: [],
-        loadComponent: () => import('./pages/dashboard-v1/dashboard-v1').then(c => c.DashboardV1)
-      },
-      {
-        path: 'home2',
-        canActivate: [],
-        loadComponent: () => import('./pages/dashboard-v2/dashboard-v2').then(c => c.DashboardV2)
-      },
-      {
-        path: 'home3',
-        canActivate: [],
-        loadComponent: () => import('./pages/dashboard-v3/dashboard-v3').then(c => c.DashboardV3)
+        children: [
+          {
+            path: '',
+            redirectTo: Menus['DASHBOARD'].children?.['DASHBOARD_V1'].url,
+            pathMatch: 'full',
+          },
+          {
+            path: Menus['DASHBOARD'].children?.['DASHBOARD_V1'].url,
+            canActivate: [],
+            loadComponent: () => import('./pages/dashboard-v1/dashboard-v1').then(c => c.DashboardV1)
+          },
+          {
+            path: Menus['DASHBOARD'].children?.['DASHBOARD_V2'].url,
+            canActivate: [],
+            loadComponent: () => import('./pages/dashboard-v2/dashboard-v2').then(c => c.DashboardV2)
+          },
+          {
+            path: Menus['DASHBOARD'].children?.['DASHBOARD_V3'].url,
+            canActivate: [],
+            loadComponent: () => import('./pages/dashboard-v3/dashboard-v3').then(c => c.DashboardV3)
+          },
+        ]
       },
     ]
   },

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Menus } from './types/constants/menus';
 import { IMenu, TPermission } from './types/interfaces/menu.interface';
-import { AuthService } from './services/auth-service';
+import { AuthService } from './services/auth/auth-service';
 
 @Injectable({
     providedIn: 'root'
@@ -32,7 +32,6 @@ export class Previleges {
                 allowedModules.push(menu)
             }
         });
-        console.log('allowedModules', allowedModules)
         return allowedModules;
     }
 

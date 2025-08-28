@@ -17,6 +17,7 @@ export const routes: Routes = [
     children: [
       {
         path: Menus['DASHBOARD'].url,
+        data: { title: Menus['DASHBOARD'].labelKey },
         children: [
           {
             path: '',
@@ -26,22 +27,26 @@ export const routes: Routes = [
           {
             path: Menus['DASHBOARD'].children?.['DASHBOARD_V1'].url,
             canActivate: [],
+            data: { title: Menus['DASHBOARD'].children?.['DASHBOARD_V1'].labelKey },
             loadComponent: () => import('./pages/dashboard-v1/dashboard-v1').then(c => c.DashboardV1)
           },
           {
             path: Menus['DASHBOARD'].children?.['DASHBOARD_V2'].url,
             canActivate: [],
+            data: { title: Menus['DASHBOARD'].children?.['DASHBOARD_V2'].labelKey },
             loadComponent: () => import('./pages/dashboard-v2/dashboard-v2').then(c => c.DashboardV2)
           },
           {
             path: Menus['DASHBOARD'].children?.['DASHBOARD_V3'].url,
             canActivate: [],
+            data: { title: Menus['DASHBOARD'].children?.['DASHBOARD_V3'].labelKey },
             loadComponent: () => import('./pages/dashboard-v3/dashboard-v3').then(c => c.DashboardV3)
           },
         ]
       },
       {
         path: Menus['FORMS'].url,
+        data: { title: Menus['FORMS'].labelKey },
         children: [
           {
             path: '',
@@ -51,12 +56,14 @@ export const routes: Routes = [
           {
             path: Menus['FORMS'].children?.['GENERAL'].url,
             canActivate: [],
+            data: { title: Menus['FORMS'].children?.['GENERAL'].labelKey },
             loadComponent: () => import('./pages/forms/general-elements/general-elements').then(c => c.GeneralElements)
           },
         ]
       },
       {
         path: Menus['TABLES'].url,
+        data: { title: Menus['TABLES'].labelKey },
         children: [
           {
             path: '',
@@ -66,6 +73,7 @@ export const routes: Routes = [
           {
             path: Menus['TABLES'].children?.['SIMPLE'].url,
             canActivate: [],
+            data: { title: Menus['TABLES'].children?.['SIMPLE'].labelKey },
             loadComponent: () => import('./pages/tables/tables-simple/tables-simple').then(c => c.TablesSimple)
           },
         ]
